@@ -1,35 +1,11 @@
-# Shopping-cart
+<center>
+  <img src="https://raw.githubusercontent.com/rivalcoba/VueJs-ShoppingCart/b9167d64e661b4e8839ca956e9fe26b47ece9f40/md/images/ITGAMBanner.png" alt="Itgam Banner" />
+</center>
 
-This template should help get you started developing with Vue 3 in Vite.
+# Shopping-cart 🛒
 
-## Recommended IDE Setup
+Proyecto dinamico para el curso de VueJS usando Composition API.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+# Autor
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Reyes Sánchez Youhali
