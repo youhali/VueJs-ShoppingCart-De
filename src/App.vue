@@ -17,7 +17,7 @@ const newItemHighPriority = ref("false");
 <!-- Chek Boxes -->
 <label>
   <input v-model="newItemHighPriority" type="checkbox">
-  Altaprioridad
+  Alta prioridad
 </label>
 {{ newItemHighPriority === "high" ?"🔥" :"🧊"}}
 <ul>
