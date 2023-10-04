@@ -15,7 +15,7 @@ const newItemHighPriority = ref("false");
 <h1></h1>
 <div class="add-item form">
   <!--Input de nuevo articulo-->
-  <input v-model.trim="newItem" type="text" placeholder="Ingresar articulo">
+  <input v-on:keyup.enter="items.push({id: items.length + 1, label: newItem}) " v-model.trim="newItem" type="text" placeholder="Ingresar nuevo articulo">
   <!-- Chek Boxes -->
   <label>
     <input v-model="newItemHighPriority" type="checkbox">
