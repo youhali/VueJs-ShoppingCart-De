@@ -13,23 +13,22 @@ const saveItem= ( )=>{
 newItem.value=" ";
 };
 const newItem = ref('');
-const newItemHighPriority = ref(false);
+const newItemHighPriority = ref(true);
+const habilitarFormulario =ref (true);
 </script>
 
 <template>
   <div class="header">
     <h1> <i class="material-icons shopping-cart-icon">local_mall</i> {{ header }}</h1>
-  <button class="btn">Cancelar</button>
-
-  <button class="btn btn-primary">Agregar articulo</button>
-  
+  <button  v-if="false" class="btn">Cancelar</button>
+  <button v-if="habilitarFormulario" class="btn btn-primary">Agregar articulo</button>
   </div>
-  <form v-on:submit.prevent="saveItem" class="add-item form">
+  <form v-if="habilitarFormulario" v-on:submit.prevent="saveItem" class="add-item form">
     <!-- Input de Nuevo Articulo -->
-    <input v-model.trim="newItem" type="text" placeholder="Ingresar nuevo articulo">
+    <input  v-model.trim="newItem" type="text" placeholder="Ingresar nuevo articulo">
     <!-- Check Boxes -->
     <label>
-      <input v-model="newItemHighPriority" 
+      <input  v-model="newItemHighPriority" 
       type="checkbox">
       Alta Prioridad
     </label>
