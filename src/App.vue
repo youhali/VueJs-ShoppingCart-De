@@ -13,15 +13,21 @@ const saveItem= ( )=>{
 newItem.value=" ";
 };
 const newItem = ref('');
-const newItemHighPriority = ref(true);
+const newItemHighPriority = ref(false);
 const habilitarFormulario =ref (false);
+//Creo la nueva variable
+const DoEdit=(edit)=>{
+  //Le coloco la accion de que sea igual a un valor 
+  habilitarFormulario.value=edit;
+  //Le coloco la accion de borrar la caja de texto
+  newItem.value="";
+};
 </script>
-
 <template>
   <div class="header">
     <h1> <i class="material-icons shopping-cart-icon">local_mall</i> {{ header }}</h1>
-  <button  v-if ="!habilitarFormulario" @click= "habilitarFormulario=true" class="btn btn-primary">Agregar articulo</button>
-  <button  v-else @click= "habilitarFormulario=false" class="btn">Cancelar</button>
+  <button  v-if ="!habilitarFormulario" @click= "DoEdit(true)" class="btn btn-primary">Agregar articulo</button>
+  <button  v-else @click= "DoEdit(false)" class="btn">Cancelar</button>
   </div>
   <form v-if="habilitarFormulario" v-on:submit.prevent="saveItem" class="add-item form">
     <!-- Input de Nuevo Articulo -->
