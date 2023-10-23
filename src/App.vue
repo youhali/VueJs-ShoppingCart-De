@@ -10,7 +10,7 @@ const items = ref([
 const saveItem= ( )=>{
   items.value.push({id: items.value .length+ 1, label: newItem.value})
 //borrando  o limpiando la caga de texto de newItem
-newItem.value=" ";
+newItem.value="";
 };
 const newItem = ref('');
 const newItemHighPriority = ref(false);
@@ -29,6 +29,11 @@ const DoEdit=(edit)=>{
   <button  v-if ="!habilitarFormulario" @click= "DoEdit(true)" class="btn btn-primary">Agregar articulo</button>
   <button  v-else @click= "DoEdit(false)" class="btn">Cancelar</button>
   </div>
+  <!--  Esto se usa para crear un ipervinculo con una imagen dependiendo de lo que escribas en la 
+    caja de texto
+  <a :href="newItem">
+  <i class="material-icons shopping-cart-icon">school</i>
+</a>-->
   <form v-if="habilitarFormulario" v-on:submit.prevent="saveItem" class="add-item form">
     <!-- Input de Nuevo Articulo -->
     <input  v-model.trim="newItem" type="text" placeholder="Ingresar nuevo articulo">
@@ -43,7 +48,7 @@ const DoEdit=(edit)=>{
     <button class="btn btn-primary">Salvar Articulo</button>
   </form>
   <ul>
-    <li v-for="{ id, label } in items" v-bind:key="id">
+    <li v-for="{ id, label } in items" v-bind:key="id" >
       ♥ {{ label }}
     </li>
   </ul>
