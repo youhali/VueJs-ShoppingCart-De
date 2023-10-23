@@ -20,8 +20,8 @@ const habilitarFormulario =ref (false);
 <template>
   <div class="header">
     <h1> <i class="material-icons shopping-cart-icon">local_mall</i> {{ header }}</h1>
-  <button  v-if="true" class="btn">Cancelar</button>
-  <button v-if="habilitarFormulario" class="btn btn-primary">Agregar articulo</button>
+  <button  v-if ="!habilitarFormulario" @click= "habilitarFormulario=true" class="btn btn-primary">Agregar articulo</button>
+  <button  v-else @click= "habilitarFormulario=false" class="btn">Cancelar</button>
   </div>
   <form v-if="habilitarFormulario" v-on:submit.prevent="saveItem" class="add-item form">
     <!-- Input de Nuevo Articulo -->
