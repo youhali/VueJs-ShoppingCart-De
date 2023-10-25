@@ -7,10 +7,13 @@ const items = ref([
   //{id: 3, label: '2 lata de atún'}
 ]);
 //Agregando todo para giardar nuevo articulo
-const saveItem= ( )=>{
-  items.value.push({id: items.value .length+ 1, label: newItem.value})
-//borrando  o limpiando la caga de texto de newItem
-newItem.value="";
+const saveItem = () => {
+  // codigo para verificar si newItem no está vacío antes de agregarlo a la lista
+  if (newItem.value.trim() !== '') {
+    items.value.push({ id: items.value.length + 1, label: newItem.value });
+    // Borrar o limpiar la caja de texto de newItem
+    newItem.value = '';
+  }
 };
 const newItem = ref('');
 const newItemHighPriority = ref(false);
